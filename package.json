@@ -1,0 +1,18 @@
+{
+  "name": "sarjeeth-portfolio",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@types/aos": "^3.0.7",
+    "aos": "^2.3.4",
+    "astro": "^4.11.3",
+    "tsparticles-slim": "^2.12.0"
+  }
+}

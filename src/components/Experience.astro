@@ -1,0 +1,19 @@
+---
+const { data } = Astro.props;
+---
+<section id="experience">
+    <div class="container">
+        <h2 data-entry-effect="fade-up">Experience</h2>
+        <div class="timeline">
+            {data.map((item, index) => (
+                <div class={`timeline-item ${index % 2 === 0 ? 'left' : 'right'}`} data-entry-effect={index % 2 === 0 ? 'fade-right' : 'fade-left'}>
+                    <div class="timeline-content">
+                        <h3>{item.title}</h3>
+                        <span class="timeline-date">{item.date}</span>
+                        <p>{item.description}</p>
+                    </div>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,13 @@
+---
+const { data } = Astro.props;
+---
+<section id="skills">
+    <div class="container">
+        <h2 data-entry-effect="fade-up">My Skills</h2>
+        <div class="skills-container" data-entry-effect="fade-up">
+            {data.map(skill => (
+                <span class="skill-tag">{skill}</span>
+            ))}
+        </div>
+    </div>
+</section>

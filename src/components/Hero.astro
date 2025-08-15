@@ -1,0 +1,26 @@
+---
+const { data } = Astro.props;
+---
+<section id="home">
+    <div class="container">
+        <div class="hero-content" data-aos="fade-up">
+            <h1>{data.headline}</h1>
+            <p class="tagline">{data.tagline}</p>
+            
+            <div class="hero-buttons">
+                <a href={data.cta.link} class="btn-main">
+                    {data.cta.text} <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="#projects" class="btn-secondary">
+                    View My Work
+                </a>
+            </div>
+
+            <div class="tech-stack">
+                {data.techStack.map((tech, index) => (
+                    <span>{tech}{index < data.techStack.length - 1 ? ' •' : ''}</span>
+                ))}
+            </div>
+        </div>
+    </div>
+</section>

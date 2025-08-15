@@ -1,0 +1,17 @@
+---
+const { branding, navigation, profile } = Astro.props;
+---
+<header class="main-header">
+    <div class="container">
+        <nav class="nav-content">
+            <a href="#home" class="logo" aria-label="Homepage">
+                <img src={branding.logoImage} alt={profile.name + ' Logo'}/>
+            </a>
+            <ul class="nav-links">
+                {navigation.map(item => (
+                    <li><a href={item.link} class={item.active ? 'active' : ''}>{item.label}</a></li>
+                ))}
+            </ul>
+        </nav>
+    </div>
+</header>

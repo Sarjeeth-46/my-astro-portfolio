@@ -1,0 +1,18 @@
+---
+const { data } = Astro.props;
+---
+<section id="certifications">
+    <div class="container">
+        <h2 data-entry-effect="fade-up">Certifications</h2>
+        <div class="certifications-grid">
+            {data.map((cert, index) => (
+                <div class="cert-card" data-entry-effect={cert.entryEffect} style={`transition-delay: ${index * 100}ms;`}>
+                    <a href={cert.link || '#'} target={cert.link ? '_blank' : '_self'} rel="noopener noreferrer">
+                        <h3>{cert.title}</h3>
+                        <p>Issued by {cert.issuer}</p>
+                    </a>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>

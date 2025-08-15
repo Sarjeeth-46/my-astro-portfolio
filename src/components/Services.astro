@@ -1,0 +1,45 @@
+---
+const { data } = Astro.props;
+const iconMap = {
+    'laptop-code': 'fas fa-laptop-code',
+    'cloud-security': 'fas fa-shield-halved', // <-- This now perfectly matches the data file
+    'robot': 'fas fa-robot'
+};
+---
+<section id="services">
+    <div class="container">
+        <h2 data-aos="fade-up">My <span class="highlight">Services</span></h2>
+        <div class="card-grid">
+            {data.map((service, index) => (
+                <div class="service-card" data-aos="fade-up" data-aos-delay={index * 100}>
+                    <div class="icon"><i class={iconMap[service.icon]}></i></div>
+                    <h3>{service.title}</h3>
+                    <p>{service.description}</p>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
+
+<style>
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+.service-card {
+    background-color: var(--surface-color);
+    padding: 2.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+.service-card .icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+.service-card h3 {
+    color: var(--text-color);
+    font-size: 1.3rem;
+}
+</style>
